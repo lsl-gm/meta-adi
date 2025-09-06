@@ -7,7 +7,8 @@ LINUX_VERSION_EXTENSION = "adi-v${@bb.parse.vars_from_file(d.getVar('FILE', Fals
 PV = "${LINUX_VERSION}-${LINUX_VERSION_EXTENSION}+git${SRCPV}"
 KBRANCH = "main"
 # needed for offline build
-SRCREV = "${@ "c8daf49830b2d19b155756d151f4c881a001a67e" if bb.utils.to_boolean(d.getVar('BB_NO_NETWORK')) else d.getVar('AUTOREV')}"
+#SRCREV = "${@ "c8daf49830b2d19b155756d151f4c881a001a67e" if bb.utils.to_boolean(d.getVar('BB_NO_NETWORK')) else d.getVar('AUTOREV')}"
+SRCREV = "c8daf49830b2d19b155756d151f4c881a001a67e"
 KERNELURI = "git://github.com/analogdevicesinc/linux.git;protocol=https"
 
 # override kernel config file
